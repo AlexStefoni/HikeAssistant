@@ -1,0 +1,7 @@
+{
+  "name": "HikeAssistant",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
