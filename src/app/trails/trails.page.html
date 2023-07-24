@@ -1,0 +1,11 @@
+<ion-content [fullscreen]="true" class="background">
+  <ion-list class="bg-transparent" >
+
+
+    <ion-item button detail lines="full" id="myList"
+      *ngFor="let item of items">
+      <ion-label>{{ item.name }}</ion-label>
+    </ion-item>
+  </ion-list> 
+
+</ion-content>

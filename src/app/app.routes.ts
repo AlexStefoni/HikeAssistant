@@ -4,6 +4,11 @@ export const routes: Routes = [
   
   {
     path: '',
-    loadComponent: () => import('./log-in/log-in.page').then( m => m.LogInPage)
+    loadComponent: () => import('./trails/trails.page').then( m => m.TrailsPage)
+    //loadComponent: () => import('./log-in/log-in.page').then( m => m.LogInPage)
+  },
+  {
+    path: 'trails',
+    loadComponent: () => import('./trails/trails.page').then( m => m.TrailsPage)
   },
 ];
