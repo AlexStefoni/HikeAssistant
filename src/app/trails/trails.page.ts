@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trails',
@@ -12,8 +12,10 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class TrailsPage {
-
-
+  constructor(private router: Router) { }
+  go(){
+    this.router.navigate(['./trail-details']);
+  }
   
   items =[
     {name: 'TEST 1' },
@@ -51,7 +53,7 @@ export class TrailsPage {
 {name: 'TEST 33' },
 {name: 'TEST 34' }
   ]
-  constructor() { }
+  
 
   ngOnInit() {
   }
