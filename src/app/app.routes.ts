@@ -16,4 +16,8 @@ export const routes: Routes = [
     path: 'trail-details',
     loadComponent: () => import('./trail-details/trail-details.page').then( m => m.TrailDetailsPage)
   },
+  {
+    path: 'map',
+    loadComponent: () => import('./map/map.page').then( m => m.MapPage)
+  }
 ];

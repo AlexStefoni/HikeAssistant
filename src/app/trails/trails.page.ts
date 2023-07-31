@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-trails',
@@ -12,13 +14,30 @@ import { Router } from '@angular/router';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class TrailsPage {
-  constructor(private router: Router) { }
+  constructor(private router: Router, public menuCtrl: MenuController) { }
+
+  toggleMenu() {
+    this.menuCtrl.close("menu");
+    console.log(this.menuCtrl.toggle("menu"));
+    
+     //Add this method to your button click function
+  }
+
+
   go(){
     this.router.navigate(['./trail-details']);
   }
   
+  goTrails(){
+    this.router.navigate(['./trails']);
+  }
+
+  goMap(){
+    this.router.navigate(['./map']);
+  }
+
   items =[
-    {name: 'TEST 1' },
+{name: 'TEST 1' },
 {name: 'TEST 2' },
 {name: 'TEST 3' },
 {name: 'TEST 4' },
