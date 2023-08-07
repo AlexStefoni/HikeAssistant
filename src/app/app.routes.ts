@@ -5,7 +5,8 @@ export const routes: Routes = [
   
   {
     path: '',
-    loadComponent: () => import('./trails/trails.page').then( m => m.TrailsPage)
+    loadComponent: () => import('./menu-user/menu-user.page').then( m => m.MenuUserPage)
+    //loadComponent: () => import('./trails/trails.page').then( m => m.TrailsPage)
     //loadComponent: () => import('./log-in/log-in.page').then( m => m.LogInPage)
   },
   {
@@ -19,5 +20,9 @@ export const routes: Routes = [
   {
     path: 'map',
     loadComponent: () => import('./map/map.page').then( m => m.MapPage)
+  },
+  {
+    path: 'menu-user',
+    loadComponent: () => import('./menu-user/menu-user.page').then( m => m.MenuUserPage)
   }
 ];
