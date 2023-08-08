@@ -1,0 +1,25 @@
+
+<ion-content [fullscreen]="true" class="mainContainer">
+  <ion-list class="bg-transparent">
+
+    <ion-item button class="LoginB" (click)="goLogIn()">
+      <ion-label class="ion-text-center">
+        LOGIN
+      </ion-label>
+    </ion-item>
+
+    <ion-item button class="RegisterB" (click)="goRegister()">
+      <ion-label class="ion-text-center">
+        REGISTER
+      </ion-label>
+      
+    </ion-item>
+    
+    <ion-item button class="GuestB" (click)="goGuest()">
+      <ion-label class="ion-text-center">
+        Continue as a Guest
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

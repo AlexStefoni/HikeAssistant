@@ -1,0 +1,69 @@
+.mainContainer{
+    --background: url(../../assets/img/LogInBackground.png) center /auto 100%   no-repeat ;
+   
+    top: 0 !important;
+	left: 0 !important;
+    
+}
+
+.bg-transparent {
+    background: transparent;
+  }
+
+.LoginB{
+    --background: #00000070;
+    --color: #fff;
+    padding-top: 60%;
+    padding-bottom: 20px;
+    padding-left: 15%;
+    padding-right: 15%;
+    --border-color: #fff;
+    --border-width: 2px;
+    --min-height: 70px;
+    --border-radius: 20px;
+  
+    --ripple-color: purple;
+  
+    --detail-icon-color: white;
+    --detail-icon-opacity: 1;
+    --detail-icon-font-size: 20px;
+}
+
+.RegisterB{
+    --background: #00000070;
+    --color: #fff;
+    padding-bottom: 10px;
+    padding-left: 15%;
+    padding-right: 15%;
+    --border-color: #fff;
+    --border-width: 2px;
+    --min-height: 70px;
+    --border-radius: 20px;
+  
+    --ripple-color: purple;
+  
+    --detail-icon-color: white;
+    --detail-icon-opacity: 1;
+    --detail-icon-font-size: 20px;
+}
+
+.GuestB{
+    --background: #00000000;
+    text-align: center;
+
+    --color: #fff;
+    padding-bottom: 10px;
+    padding-left: 15%;
+    padding-right: 15%;
+    --border-color: transparent;
+    --border-width: 2px;
+    --min-height: 10px;
+    --border-radius: 20px;
+  
+    --ripple-color: transparent;
+  
+    --detail-icon-color: white;
+    --detail-icon-opacity: 1;
+    --detail-icon-font-size: 20px;
+}
+    
