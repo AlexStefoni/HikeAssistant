@@ -5,6 +5,14 @@
 export const environment = {
   production: false,
   mapsKey: 'AIzaSyAt80HymmlTVShtAmpUW3S1-gP1I-6tngM',
+  firebase:{
+    apiKey: "AIzaSyAaevZr0fUKXHnMqo0g7Ndjfhno3SoJUgY",
+    authDomain: "hikeassistant-80a49.firebaseapp.com",
+    projectId: "hikeassistant-80a49",
+    storageBucket: "hikeassistant-80a49.appspot.com",
+    messagingSenderId: "975782198714",
+    appId: "1:975782198714:web:fa73c2111fd5535355b183"
+  }
 };
 
 /*

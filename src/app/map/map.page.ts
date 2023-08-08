@@ -6,6 +6,7 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { GoogleMap } from '@capacitor/google-maps';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-map',
@@ -19,9 +20,16 @@ export class MapPage {
   @ViewChild('map') mapRef:ElementRef<HTMLElement>;;
   map: GoogleMap;
 
-  constructor() {}
+  constructor(private router: Router) {}
   ionViewDidEnter() {
     this.createMap();
+  }
+  goTrails(){
+    this.router.navigate(['./trails']);
+  }
+
+  goMap(){
+    this.router.navigate(['./map']);
   }
 
 
