@@ -28,9 +28,14 @@ export const routes: Routes = [
   {
     path: 'start-page',
     loadComponent: () => import('./start-page/start-page.page').then( m => m.StartPagePage)
-  },  {
+  },
+  {
     path: 'register-tab',
     loadComponent: () => import('./register-tab/register-tab.page').then( m => m.RegisterTabPage)
+  },
+  {
+    path: 'log-in',
+    loadComponent: () => import('./log-in/log-in.page').then( m => m.LogInPage)
   }
 
 

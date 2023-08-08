@@ -2,41 +2,44 @@
 
 <ion-content [fullscreen]="true" padding class="background">
 
-
+  <div class="space">
+  </div>
 
       
-  <div class="pageContainer">
-    <div class="UserName">
-    <ion-item>
-      <ion-input 
-        shape="round"
-        fill="solid"
-        label="Email"
-        labelPlacement="floating"
-        
+  <ion-list class="bg-transparent">
+  <ion-item class="field">
+    <ion-input 
+      maxlength="20" 
+      label-placement="floating" 
+      label="username" 
+      placeholder="username" 
+      [clearOnEdit]="true"
+      #ionInputUsername
       ></ion-input>
-    </ion-item>
-    </div>
-  <br>
-  <div class="id">
-    <ion-item>
-      <ion-input 
-        shape="round"
-        fill="solid"
-        label="Password"
-        labelPlacement="floating"
-        
+  </ion-item>
+  <ion-item class="field">
+    <ion-input 
+      maxlength="20" 
+      label-placement="floating" 
+      label="password" 
+      type="password" 
+      placeholder="password" 
+      [clearOnEdit]="true"
+      #ionInputPass
       ></ion-input>
-    </ion-item>
-
-    </div>
+  </ion-item>
 
 
-
-
+  </ion-list>
     <br><br><br><br><br>
 
-    <ion-button shape="round" class="LogInButton">Sing-In</ion-button>
+    <ion-item 
+      (click)="signIN()"
+      button  
+      class="loginB"
+      >
+       Sign-In
+    </ion-item>
  
-  </div>
+  
 </ion-content>

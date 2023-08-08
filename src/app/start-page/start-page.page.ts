@@ -21,7 +21,7 @@ export class StartPagePage implements OnInit {
   }
 
   goLogIn(){
-
+    this.router.navigate(['./log-in']);
   }
 
   goRegister(){

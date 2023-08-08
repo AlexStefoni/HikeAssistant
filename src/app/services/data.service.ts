@@ -28,15 +28,7 @@ export class DataService {
     return collectionData(notesRef, { idField: 'id'}) as Observable<Note[]>;
   }
 
-  getNoteById(id: any): Observable<Note> {
-    const noteDocRef = doc(this.firestore, `notes/${id}`);
-    return docData(noteDocRef, { idField: 'id' }) as Observable<Note>;
-  }
 
-  addNote(note: Note) {
-    const notesRef = collection(this.firestore, 'notes');
-    return addDoc(notesRef, note);
-  }
 
   deleteNote(note: Note) {
     const noteDocRef = doc(this.firestore, `notes/${note.id}`);
@@ -52,6 +44,12 @@ export class DataService {
     const notesRef = collection(this.firestore, 'Users');
     return addDoc(notesRef, user);
   }
+
+  getNotes(): Observable<Users[]> {
+    const notesRef = collection(this.firestore, 'Users');
+    return collectionData(notesRef, { idField: 'id'}) as Observable<Users[]>;
+  }
+
 }
 
 
