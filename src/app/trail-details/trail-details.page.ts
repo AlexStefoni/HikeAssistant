@@ -17,7 +17,7 @@ import { DataService } from '../services/data.service';
 export class TrailDetailsPage implements OnInit {
 
   constructor(private router: Router, private dataService: DataService) {
-    this.dataService.getNotes().subscribe(res => {
+    this.dataService.getTrails().subscribe(res => {
       console.log(res);
     });
    }
