@@ -17,7 +17,10 @@ export class MenuUserPage implements OnInit {
 
   ngOnInit() {
   }
+  goBack(){
+    this.router.navigate(['./start-page']);
 
+  }
   goTrails(){
     this.router.navigate(['./trails']);
   }

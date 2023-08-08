@@ -1,0 +1,86 @@
+<ion-content [fullscreen]="true" class="mainContainer">
+
+  <ion-list class="bg-transparent">
+
+    <ion-item button class="LoginB" (click)="goBack()" class="BackB">
+      <ion-icon size="large" name="arrow-back-outline" aria-hidden="true" ></ion-icon>
+    </ion-item>
+    <br><br><br><br><br><br><br><br><br><br>
+
+
+    <ion-item class="ErrorMsg" #ErrorMsg>
+      <ion-label color="danger"  >
+        
+      </ion-label>
+    </ion-item>
+
+
+    <ion-item class="field">
+      <ion-input 
+        maxlength="20" 
+        label-placement="floating" 
+        label="username" 
+        placeholder="username" 
+        
+        #ionInputUsername
+        ></ion-input>
+    </ion-item>
+
+    <ion-item class="field">
+      <ion-input 
+        maxlength="100" 
+        type="email" 
+        label-placement="floating" 
+        label="e-mail" 
+        placeholder="e-mail" 
+        errorText="Invalid email" 
+        ngModel 
+        email 
+
+        #ionInputEmail
+        ></ion-input>
+    </ion-item>
+
+    <ion-item class="field">
+      <ion-input 
+        maxlength="20" 
+        label-placement="floating" 
+        label="password" 
+        type="password" 
+        placeholder="password" 
+        
+        #ionInputPass
+        ></ion-input>
+    </ion-item>
+    
+    <ion-item class="field">
+      <ion-input 
+        maxlength="20" 
+        label-placement="floating" 
+        label="repeat password" 
+        type="password" 
+        placeholder="repeat password" 
+
+        #ionInputPass2
+      ></ion-input>
+    </ion-item>
+
+    <ion-checkbox 
+      labelPlacement="end"
+      #ionCheckAdmin
+      
+
+    >
+      Admin ? 
+    </ion-checkbox>
+
+    <br><br><br><br><br><br>
+    <ion-item 
+      (click)="saveButton()"
+      button  
+      class="saveB"
+      >
+       Save 
+    </ion-item>
+  </ion-list>
+</ion-content>

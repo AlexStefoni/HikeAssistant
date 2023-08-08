@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { AES } from 'crypto-ts';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-start-page',
@@ -12,7 +15,7 @@ import { IonicModule } from '@ionic/angular';
 })
 export class StartPagePage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -22,10 +25,15 @@ export class StartPagePage implements OnInit {
   }
 
   goRegister(){
-
+    this.router.navigate(['./register-tab']);
   }
 
   goGuest(){
+    
+    this.router.navigate(['./menu-user']);
+    const encryptedMessage = AES.encrypt('message', 'test');
+    console.log(encryptedMessage.toString());
+    const decryptedMessage = AES.decrypt(encryptedMessage,'test');
     
   }
 }

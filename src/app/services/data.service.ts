@@ -7,6 +7,14 @@ export interface Note {
   title: string;
   text: string;
 }
+export interface Users {
+  id?: string | number | null | undefined ;
+  email: string | number | null | undefined ;
+  user_id: string | number | null | undefined ;
+  user_pass: string | number | null | undefined ;
+  user_type: boolean;
+  
+}
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +48,10 @@ export class DataService {
     return updateDoc(noteDocRef, { title: note.title, text: note.text });
   }
 
+  addUser(user: Users) {
+    const notesRef = collection(this.firestore, 'Users');
+    return addDoc(notesRef, user);
+  }
 }
 
 
