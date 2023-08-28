@@ -23,3 +23,26 @@ ion-item {
     --detail-icon-opacity: 1;
     --detail-icon-font-size: 20px;
   }
+
+  .BackB{
+    --background:  rgba(252, 245, 245, 0.25);
+   
+
+  
+    padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 88%;
+    --border-color: transparent;
+    --border-width: 2px;
+    --min-height: 20px;
+    --border-radius: 15px;
+  
+    --ripple-color: transparent;
+  
+    --detail-icon-color: rgb(0, 0, 0);
+    --detail-icon-opacity: 1;
+    --detail-icon-font-size: 20px;
+}
+ion-icon{
+    color:black;
+}

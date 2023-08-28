@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
+import { DataService, Users } from '../services/data.service';
 
 
 @Component({
@@ -14,15 +15,13 @@ import { MenuController } from '@ionic/angular';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class TrailsPage {
-  constructor(private router: Router, public menuCtrl: MenuController) { }
+  constructor(private router: Router, public menuCtrl: MenuController, private dataService: DataService) { }
 
-  toggleMenu() {
-    this.menuCtrl.close("menu");
-    console.log(this.menuCtrl.toggle("menu"));
-    
-     //Add this method to your button click function
+  goBack(){
+    this.router.navigate(['./menu-user']);
+
   }
-
+  
 
   go(){
     this.router.navigate(['./trail-details']);

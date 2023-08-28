@@ -20,7 +20,8 @@
     "target": "es2022",
     "module": "es2020",
     "lib": ["es2018", "dom"],
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -28,4 +29,5 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   }
+  
 }

@@ -27,6 +27,7 @@ export class TrailDetailsPage implements OnInit {
 
   goBack(){
     this.router.navigate(['./trails']);
+    
   }
 
 }

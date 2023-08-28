@@ -7,6 +7,18 @@ export interface Note {
   title: string;
   text: string;
 }
+export interface Users {
+  id?: string | number | null | undefined ;
+  email: string | number | null | undefined ;
+  user_id: string | number | null | undefined ;
+  user_pass: string | number | null | undefined ;
+  user_type: boolean;
+  
+}
+
+export interface Trails{
+  
+}
 
 @Injectable({
   providedIn: 'root'
@@ -20,15 +32,7 @@ export class DataService {
     return collectionData(notesRef, { idField: 'id'}) as Observable<Note[]>;
   }
 
-  getNoteById(id: any): Observable<Note> {
-    const noteDocRef = doc(this.firestore, `notes/${id}`);
-    return docData(noteDocRef, { idField: 'id' }) as Observable<Note>;
-  }
 
-  addNote(note: Note) {
-    const notesRef = collection(this.firestore, 'notes');
-    return addDoc(notesRef, note);
-  }
 
   deleteNote(note: Note) {
     const noteDocRef = doc(this.firestore, `notes/${note.id}`);
@@ -38,6 +42,16 @@ export class DataService {
   updateNote(note: Note) {
     const noteDocRef = doc(this.firestore, `notes/${note.id}`);
     return updateDoc(noteDocRef, { title: note.title, text: note.text });
+  }
+
+  addUser(user: Users) {
+    const notesRef = collection(this.firestore, 'Users');
+    return addDoc(notesRef, user);
+  }
+
+  getNotes(): Observable<Users[]> {
+    const notesRef = collection(this.firestore, 'Users');
+    return collectionData(notesRef, { idField: 'id'}) as Observable<Users[]>;
   }
 
 }
