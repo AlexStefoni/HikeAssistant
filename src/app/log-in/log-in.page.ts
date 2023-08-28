@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonInput, IonicModule } from '@ionic/angular';
 import { DataService, Users } from '../services/data.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -20,7 +22,7 @@ export class LogInPage implements OnInit {
   varUser = "" ;
   varPass= "";
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router: Router) {
     this.dataService.getNotes().subscribe(
       res=> {
         this.users=res;
@@ -40,7 +42,9 @@ export class LogInPage implements OnInit {
         ||(this.users[index].user_id===this.inputUser.value))
         &&(this.users[index].user_pass===this.inputPass.value)
         
-        ) {this.check= true; this.varUser=this.varUser+this.inputUser.value;}
+        ) {this.check= true; this.varUser=this.varUser+this.inputUser.value;
+          this.router.navigate(['./menu-user']);
+        }
     }
 
 

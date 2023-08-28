@@ -5,7 +5,7 @@ export const routes: Routes = [
   
   {
     path: '',
-    loadComponent: () => import('./start-page/start-page.page').then( m => m.StartPagePage)
+    loadComponent: () => import('./title-page/title-page.page').then( m => m.TitlePagePage)
     //loadComponent: () => import('./trails/trails.page').then( m => m.TrailsPage)
     //loadComponent: () => import('./log-in/log-in.page').then( m => m.LogInPage)
   },
@@ -36,7 +36,12 @@ export const routes: Routes = [
   {
     path: 'log-in',
     loadComponent: () => import('./log-in/log-in.page').then( m => m.LogInPage)
+  },
+  {
+    path: 'title-page',
+    loadComponent: () => import('./title-page/title-page.page').then( m => m.TitlePagePage)
   }
+
 
 
 ];

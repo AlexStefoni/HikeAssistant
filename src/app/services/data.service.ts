@@ -16,6 +16,10 @@ export interface Users {
   
 }
 
+export interface Trails{
+  
+}
+
 @Injectable({
   providedIn: 'root'
 })
