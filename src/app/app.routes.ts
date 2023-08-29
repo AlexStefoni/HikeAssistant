@@ -40,7 +40,19 @@ export const routes: Routes = [
   {
     path: 'title-page',
     loadComponent: () => import('./title-page/title-page.page').then( m => m.TitlePagePage)
+  },  {
+    path: 'user',
+    loadComponent: () => import('./user/user.page').then( m => m.UserPage)
+  },
+  {
+    path: 'add-trail',
+    loadComponent: () => import('./add-trail/add-trail.page').then( m => m.AddTrailPage)
+  },
+  {
+    path: 'local-tips',
+    loadComponent: () => import('./local-tips/local-tips.page').then( m => m.LocalTipsPage)
   }
+
 
 
 
