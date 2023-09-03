@@ -91,4 +91,8 @@ export class MenuUserPage implements OnInit {
     this.router.navigate(['./animals']);
   }
 
+  goContact(){
+    this.router.navigate(['./contact-page']);
+  }
+
 }
