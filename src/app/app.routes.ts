@@ -71,6 +71,14 @@ export const routes: Routes = [
   {
     path: 'ethicspage',
     loadComponent: () => import('./ethicspage/ethicspage.page').then( m => m.EthicspagePage)
+  },
+  {
+    path: 'food-page',
+    loadComponent: () => import('./food-page/food-page.page').then( m => m.FoodPagePage)
+  },
+  {
+    path: 'animals',
+    loadComponent: () => import('./animals/animals.page').then( m => m.AnimalsPage)
   }
 
 

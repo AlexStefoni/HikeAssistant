@@ -84,4 +84,11 @@ export class MenuUserPage implements OnInit {
     this.router.navigate(['./ethicspage']);
   }
 
+  goFood(){
+    this.router.navigate(['./food-page']);
+  }
+  goAnimals(){
+    this.router.navigate(['./animals']);
+  }
+
 }
