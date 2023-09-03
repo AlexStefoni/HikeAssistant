@@ -51,6 +51,14 @@ export const routes: Routes = [
   {
     path: 'local-tips',
     loadComponent: () => import('./local-tips/local-tips.page').then( m => m.LocalTipsPage)
+  },
+  {
+    path: 'recommendations',
+    loadComponent: () => import('./recommendations/recommendations.page').then( m => m.RecommendationsPage)
+  },
+  {
+    path: 'add-trails',
+    loadComponent: () => import('./add-trails/add-trails.page').then( m => m.AddTrailsPage)
   }
 
 

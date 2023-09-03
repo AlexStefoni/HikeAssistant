@@ -1,0 +1,84 @@
+<ion-content [fullscreen]="true" class="mainContainer">
+
+  <ion-list class="bg-transparent">
+
+    <ion-item button class="LoginB" (click)="goBack()" class="BackB">
+      <ion-icon size="large" name="arrow-back-outline" aria-hidden="true" ></ion-icon>
+    </ion-item>
+    <br><br><br><br><br>
+
+    <ion-item class="field">
+      <ion-input 
+       
+        label-placement="floating" 
+        label="NAME" 
+        placeholder="NAME" 
+        
+        #name
+        ></ion-input>
+    </ion-item>
+    <br>  <br>
+    <ion-item class="field">
+      <ion-input 
+ 
+        label-placement="floating" 
+        label="START POINT LATITUDE" 
+        placeholder="START POINT LATITUDE" 
+        
+        #S1
+        ></ion-input>
+    </ion-item>
+
+    <ion-item class="field">
+      <ion-input 
+        label-placement="floating" 
+        label="START POINT LONGITUDE" 
+        placeholder="START POINT LONGITUDE" 
+        
+        #S2
+        ></ion-input>
+    </ion-item>
+    <br> <br>
+
+    <ion-item class="field">
+      <ion-input 
+        label-placement="floating" 
+        label="END POINT LATITUDE" 
+        placeholder="END POINT LATITUDE" 
+        
+        #E1
+        ></ion-input>
+    </ion-item>
+
+    <ion-item class="field" >
+      <ion-input 
+        label-placement="floating" 
+        label="END POINT LONGITUDE" 
+        placeholder="END POINT LONGITUDE" 
+        
+        #E2
+        ></ion-input>
+    </ion-item>
+    <br> <br>
+    <ion-item class="field" >
+      <ion-input 
+        label-placement="floating" 
+        label="DESCRIPTION" 
+        placeholder="DESCRIPTION" 
+        
+        #desc
+        ></ion-input>
+    </ion-item>
+
+    <br><br><br><br><br><br>
+    <ion-item 
+      (click)="saveButton()"
+      button  
+      class="saveB"
+      >
+       Save 
+    </ion-item>
+
+
+  </ion-list>
+</ion-content>

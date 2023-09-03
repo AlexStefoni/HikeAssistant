@@ -43,8 +43,9 @@ export class RegisterTabPage implements OnInit {
     console.log(this.inputPass2.value);
     console.log(this.adminCheck.checked);
     
-    //this.dataService.addUser({ email :  this.inputEmail.value  , user_id : this.inputUser.value ,user_pass : this.inputPass.value, user_type : this.adminCheck.checked});
+    this.dataService.addUser({ email :  this.inputEmail.value  , user_id : this.inputUser.value ,user_pass : this.inputPass.value, user_type : this.adminCheck.checked});
     this.inputUser.value="";
+    
     
     this.adminCheck.checked=false;
     this.router.navigate(['./start-page']);

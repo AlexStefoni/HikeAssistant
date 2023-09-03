@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
-import { DataService, Users } from '../services/data.service';
+import { DataService, Trails, Users } from '../services/data.service';
 
 
 @Component({
@@ -15,7 +15,17 @@ import { DataService, Users } from '../services/data.service';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class TrailsPage {
-  constructor(private router: Router, public menuCtrl: MenuController, private dataService: DataService) { }
+
+  trails : Trails[];
+  
+  constructor(private router: Router, public menuCtrl: MenuController, private dataService: DataService) {
+    this.dataService.getTrails().subscribe(
+      res=> {
+        this.trails=res;
+      }
+
+      )
+   }
 
   goBack(){
     this.router.navigate(['./menu-user']);
@@ -23,8 +33,9 @@ export class TrailsPage {
   }
   
 
-  go(){
+  go(tr:Trails ){
     this.router.navigate(['./trail-details']);
+    this.dataService.setTrailCurrent(tr.id);
   }
   
   goTrails(){
@@ -35,7 +46,7 @@ export class TrailsPage {
     this.router.navigate(['./map']);
   }
 
-  items =[
+  itemsFree =[
 {name: 'TEST 1' },
 {name: 'TEST 2' },
 {name: 'TEST 3' },
@@ -73,9 +84,14 @@ export class TrailsPage {
   ]
   
 
-  ngOnInit() {
+items = this.itemsFree.filter((free)=>free.name == 'TEST 15');
+
+ 
+
+
+ngOnInit() {
   }
-  
+ 
   
 
 }

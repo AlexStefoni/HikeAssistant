@@ -7,6 +7,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { GoogleMap } from '@capacitor/google-maps';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
+import { DataService, Trails } from '../services/data.service';
+
+declare var google : any;
 
 @Component({
   selector: 'app-map',
@@ -17,36 +20,120 @@ import { Router } from '@angular/router';
   schemas: [CUSTOM_ELEMENTS_SCHEMA] 
 })
 export class MapPage {
-  @ViewChild('map') mapRef:ElementRef<HTMLElement>;;
-  map: GoogleMap;
 
-  constructor(private router: Router) {}
-  ionViewDidEnter() {
-    this.createMap();
-  }
-  goTrails(){
-    this.router.navigate(['./trails']);
-  }
-
-  goMap(){
-    this.router.navigate(['./map']);
-  }
+  map: any;
 
 
-  async createMap(){
-    this.map = await GoogleMap.create({
-      id: 'my-cool-map',
-      element: this.mapRef.nativeElement,
-      apiKey: environment.mapsKey,
+  @ViewChild('map',{read: ElementRef,static: false}) mapRef:ElementRef;
+ 
+  infoWindow: any = [];
+  markers: any = [
+    {
+      latitude: "",
+      longitude: "",
+    },
+    {
+      latitude: "",
+      longitude: "",
+    },
+  ];
+    
+
+  trail: Trails;
+  creator:any;
+  name:any;
+  id:any;
+  desc:any;
+  latS:any="";
+  lonS:any="";
+  latE:any="";
+  lonE:any="";
+
+
+
+
+  constructor(private router: Router,private dataService: DataService) {
+
+    this.dataService.getTrailCurrent().subscribe(res=> {
+      this.id = res.data;
+      this.dataService.getTrail_byId(res.data).subscribe(res=> {  
       
-      config: {
-        center: {
-          lat: 45.7,
-          lng: 21.2,
-        },
-        zoom: 12,
-      }
-  });
-  
+
+        this.name=res.Name;
+        this.creator=res.Creator;
+        this.desc=res.description;
+        this.latS=res.StartLat;
+        this.lonS=res.StartLon;
+        this.latE=res.EndLat;
+        this.lonE=res.EndLon;
+        
+
+        this.markers=[
+          {
+            latitude: res.StartLat,
+            longitude: res.StartLon,
+          },
+          {
+            latitude: res.EndLat,
+            longitude: res.EndLon,
+          }
+      
+        ];
+
+      })
+    
+    
+    });
+
+    
+   }
+
+  ionViewDidEnter() {
+    this.showMap();
   }
+
+  addMarkersToMap(markers:any){
+
+    for (let marker of markers ){
+      let position = new google.maps.LatLng(marker.latitude,marker.longitude);
+      let mapMarker = new google.maps.Marker({
+        position:position,
+        title: marker.title,
+        latitude: marker.latitude,
+        longitude:marker.longitude
+      });
+      
+      mapMarker.setMap(this.map);
+      //this.addInfoWindowToMarker(mapMarker);
+
+    } 
+
+  }
+
+
+ 
+
+  showMap(){
+    const location = new google.maps.LatLng(this.latS, this.lonS);
+    const options = {
+      center : location,
+      zoom : 10,
+      DisableDefaultUI: true
+    }
+
+    this.map = new google.maps.Map(this.mapRef.nativeElement,options);
+    this.addMarkersToMap(this.markers);
+  }
+  
+  goBack(){
+    this.router.navigate(['./menu-user']);
+  }
+
+  
+
+
+  
+  
+    
+  
 }

@@ -6,6 +6,29 @@
 
     
 
+
+    <ion-item
+      button 
+      detail 
+      lines="full" 
+      *ngIf="isAdmin"
+      > USER ACCOUNTS</ion-item>
+
+    <ion-item
+      button 
+      detail 
+      lines="full" 
+      *ngIf="isAccount"
+      > PERSONAL TRAILS </ion-item>    
+
+      <ion-item
+      button 
+      detail 
+      lines="full" 
+      *ngIf="isAccount"
+      (click)="goAddtrails()"
+      > ADD TRAILS </ion-item> 
+
     <ion-item
       button 
       detail 
@@ -16,6 +39,45 @@
       button 
       detail 
       lines="full" 
-      (click)="goMap()"> Map </ion-item>
+      (click)="goMap()"> MAP </ion-item>
+
+      <ion-item
+      button 
+      detail 
+      lines="full" 
+      (click)="goRecommendations()"> RECOMMENDATIONS </ion-item>
+
+      <ion-item
+      button 
+      detail 
+      lines="full" 
+      (click)="goRecommendations()"> MOUNTAIN ETHIC CODE </ion-item>
+
+      <ion-item
+      button 
+      detail 
+      lines="full" 
+      (click)="goRecommendations()"> FOOD AND HYDRATION </ion-item>
+
+      <ion-item
+      button 
+      detail 
+      lines="full" 
+      (click)="goRecommendations()"> MEETING ANIMALS</ion-item>
+
+      <ion-item
+      button 
+      detail 
+      lines="full" 
+      (click)="goRecommendations()"> CONTACT CREATOR </ion-item>
+
+
+
+
+
+
+
+
+      
       
 </ion-content>

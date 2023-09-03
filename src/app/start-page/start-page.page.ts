@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { AES } from 'crypto-ts';
 import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 
 @Component({
@@ -15,7 +16,10 @@ import { Router } from '@angular/router';
 })
 export class StartPagePage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private dataService: DataService) { 
+    this.dataService.setTrailCurrent("");
+    this.dataService.setUserCurrent("");
+  }
 
   ngOnInit() {
   }
@@ -30,6 +34,7 @@ export class StartPagePage implements OnInit {
 
   goGuest(){
     
+    this.dataService.setUserCurrent("VISITATOR_USER");
     this.router.navigate(['./menu-user']);
     const encryptedMessage = AES.encrypt('message', 'test');
     console.log(encryptedMessage.toString());
