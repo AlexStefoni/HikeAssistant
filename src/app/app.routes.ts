@@ -67,6 +67,10 @@ export const routes: Routes = [
   {
     path: 'personal-trails',
     loadComponent: () => import('./personal-trails/personal-trails.page').then( m => m.PersonalTrailsPage)
+  },
+  {
+    path: 'ethicspage',
+    loadComponent: () => import('./ethicspage/ethicspage.page').then( m => m.EthicspagePage)
   }
 
 

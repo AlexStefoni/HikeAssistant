@@ -80,5 +80,8 @@ export class MenuUserPage implements OnInit {
     this.router.navigate(['./add-trails']);
   }
 
+  goEthics(){
+    this.router.navigate(['./ethicspage']);
+  }
 
 }
