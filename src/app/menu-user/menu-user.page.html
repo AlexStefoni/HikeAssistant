@@ -12,6 +12,7 @@
       detail 
       lines="full" 
       *ngIf="isAdmin"
+      (click)="goUserList()"
       > USER ACCOUNTS</ion-item>
 
     <ion-item
@@ -19,6 +20,7 @@
       detail 
       lines="full" 
       *ngIf="isAccount"
+      (click)="goPersonalTrails()"
       > PERSONAL TRAILS </ion-item>    
 
       <ion-item

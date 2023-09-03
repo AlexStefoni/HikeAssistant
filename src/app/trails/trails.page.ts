@@ -18,6 +18,7 @@ export class TrailsPage {
 
   trails : Trails[];
   
+  
   constructor(private router: Router, public menuCtrl: MenuController, private dataService: DataService) {
     this.dataService.getTrails().subscribe(
       res=> {

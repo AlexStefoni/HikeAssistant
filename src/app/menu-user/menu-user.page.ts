@@ -18,7 +18,7 @@ import { DataService, Users } from '../services/data.service';
 
 export class MenuUserPage implements OnInit {
 
-  user_current : Users;
+  user_current : Users ;
   id_current : string;
   isAdmin : boolean;
   isAccount : boolean;
@@ -46,6 +46,14 @@ export class MenuUserPage implements OnInit {
     else this.isAccount= true;
   }
 
+  goPersonalTrails(){
+
+    this.router.navigate(['./personal-trails']);
+  }
+  goUserList(){
+    this.router.navigate(['./account-list']);
+
+  }
   goBut(){
 
     this.isAdmin = this.user_current.user_type;
