@@ -86,7 +86,11 @@ export class DataService {
     return updateDoc( CTDocRef ,{data: id});
   }
 
-  
+  updatePass(id:any , pass:any) {
+    const UDocRef = doc(this.firestore, `Users/${id}`);
+    return docData(UDocRef, { idField: 'id' }) as Observable<Users>;
+    //updateDoc(UDocRef, { user_pass : pass });
+  }
 
   
 

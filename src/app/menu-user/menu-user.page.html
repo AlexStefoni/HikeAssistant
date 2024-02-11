@@ -8,6 +8,13 @@
       button 
       detail 
       lines="full" 
+      *ngIf="isAccount"
+      (click)="goUser()"> ACCOUNT </ion-item>
+
+    <ion-item
+      button 
+      detail 
+      lines="full" 
       *ngIf="isAdmin"
       (click)="goUserList()"
       > USER ACCOUNTS</ion-item>

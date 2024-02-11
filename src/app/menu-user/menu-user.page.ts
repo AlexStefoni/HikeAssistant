@@ -76,6 +76,10 @@ export class MenuUserPage implements OnInit {
     this.router.navigate(['./recommendations']);
   }
 
+  goUser(){
+    this.router.navigate(['./user']);
+  }
+
   goAddtrails(){
     this.router.navigate(['./add-trails']);
   }
