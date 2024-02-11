@@ -126,7 +126,7 @@ export class TrailDetailsPage implements OnInit {
  
 
 
-  showMap(){
+  async showMap(){
     console.log(this.latS);
     const location = new google.maps.LatLng(this.latS, this.lonS);
     const options = {
