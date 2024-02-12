@@ -39,13 +39,13 @@ export class DataService {
   constructor(private firestore: Firestore) { }
 
   getTrails(): Observable<Trails[]> {
-    const notesRef = collection(this.firestore, 'Trails');
-    return collectionData(notesRef, { idField: 'id'}) as Observable<Trails[]>;
+    const Ref = collection(this.firestore, 'Trails');
+    return collectionData(Ref, { idField: 'id'}) as Observable<Trails[]>;
   }
 
   getUsers(): Observable<Users[]> {
-    const notesRef = collection(this.firestore, 'Users');
-    return collectionData(notesRef, { idField: 'id'}) as Observable<Users[]>;
+    const Ref = collection(this.firestore, 'Users');
+    return collectionData(Ref, { idField: 'id'}) as Observable<Users[]>;
   }
 
   getUser_byId(id:string):Observable<Users>{
@@ -58,13 +58,13 @@ export class DataService {
   }
 
   addUser(user: Users) {
-    const notesRef = collection(this.firestore, 'Users');
-    return addDoc(notesRef, user);
+    const Ref = collection(this.firestore, 'Users');
+    return addDoc(Ref, user);
   }
 
   addTrail(trail: Trails){
-    const notesRef = collection(this.firestore, 'Trails');
-    return addDoc(notesRef, trail);
+    const Ref = collection(this.firestore, 'Trails');
+    return addDoc(Ref, trail);
   }
 
   getUserCurrent(): Observable<DataC> {
@@ -88,11 +88,25 @@ export class DataService {
 
   updatePass(id:any , pass:any) {
     const UDocRef = doc(this.firestore, `Users/${id}`);
-    return docData(UDocRef, { idField: 'id' }) as Observable<Users>;
-    //updateDoc(UDocRef, { user_pass : pass });
+    return updateDoc(UDocRef, { user_pass : pass });
   }
 
-  
+  updatePass2(user: Users, pass:any) {
+    const Ref = doc(this.firestore, `Users/${user.id}`);
+    return updateDoc(Ref, { user_pass : pass  });
+  }
+
+  updateTrails(trail: Trails,newTrail: Trails){
+    const Ref = doc(this.firestore, `Trails/${trail.id}`);
+    return updateDoc(Ref, { EndLat : newTrail.EndLat, EndLon : newTrail.EndLon, Name : newTrail.Name, StartLat : newTrail.StartLat, StartLon : newTrail.StartLon , description : newTrail.description });
+  }
+
+  deleteTrail(trail: Trails){
+    
+    const Ref = doc(this.firestore, `Trails/${trail.id}`);
+    return deleteDoc(Ref);
+    
+  }
 
 }
 

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { DataService, Trails } from '../services/data.service';
+import { DataService, Trails ,Users } from '../services/data.service';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { GoogleMap } from '@capacitor/google-maps';
 import { environment } from 'src/environments/environment';
@@ -28,7 +28,9 @@ export class TrailDetailsPage implements OnInit {
   @ViewChild('title', { static: true }) titleVar : ElementRef;
 
   map: any;
+  isAdmin : boolean;
 
+  
   markers: any = [
     {
       latitude: "",
@@ -51,9 +53,20 @@ export class TrailDetailsPage implements OnInit {
   latE:any="";
   lonE:any="";
 
-
+  user_current : Users ;
+  tempTrail : Trails ;
 
   constructor(private router: Router, private dataService: DataService) {
+    this.dataService.getUserCurrent().subscribe(res=>{ this.dataService.getUser_byId(res.data).subscribe(res=>{this.user_current=res})});
+    this.dataService.getTrailCurrent().subscribe(res=>{ this.dataService.getTrail_byId(res.data).subscribe(res=>{this.tempTrail=res})});
+
+    this.dataService.getUserCurrent().subscribe(res=>{ this.dataService.getUser_byId(res.data).subscribe(res=>
+      { 
+        this.isAdmin=res.user_type;
+        if(this.tempTrail.Creator===res.user_id) this.isAdmin=true;
+        else this.isAdmin=false;
+    })});
+
     this.dataService.getTrailCurrent().subscribe(res=> {
       this.id = res.data;
       this.dataService.getTrail_byId(res.data).subscribe(res=> {  
@@ -91,6 +104,13 @@ export class TrailDetailsPage implements OnInit {
   ngOnInit() {
   }
   
+
+  deleteTr(){
+    this.dataService.deleteTrail(this.tempTrail);
+    this.router.navigate(['./menu-user']);
+  }
+
+
   ionViewDidEnter() {
   
     this.showMap();
@@ -99,6 +119,10 @@ export class TrailDetailsPage implements OnInit {
   goBack(){
     this.router.navigate(['./trails']);
     
+  }
+
+  goEdit(){
+    this.router.navigate(['./trail-edit']);
   }
 
   addMarkersToMap(markers:any){

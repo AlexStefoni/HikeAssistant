@@ -22,4 +22,23 @@
       
     </ion-item>
 
+
+    <ion-item
+    button
+    *ngIf="isAdmin" 
+    class="title"
+    (click)="goEdit()">
+
+      Modify Trail
+    </ion-item>  
+
+    <br><br><br><br><br><br>
+
+    <ion-item 
+    button
+    *ngIf="isAdmin" 
+    class="title"
+    (click)="deleteTr()">
+      Delete Trail
+    </ion-item>  
 </ion-content>

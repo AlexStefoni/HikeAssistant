@@ -95,6 +95,10 @@ export const routes: Routes = [
   {
     path: 'user-details',
     loadComponent: () => import('./user-details/user-details.page').then( m => m.UserDetailsPage)
+  },
+  {
+    path: 'trail-edit',
+    loadComponent: () => import('./trail-edit/trail-edit.page').then( m => m.TrailEditPage)
   }
 
 

@@ -46,7 +46,7 @@ export class UserPage implements OnInit {
 
   async setPass(){
     //console.log(this.user_current.id);
-    if(this.passU===this.inputPass.value) {console.log(this.dataService.updatePass(this.user_current.id ,this.inputPass2));
+    if(this.passU===this.inputPass.value) {console.log(this.dataService.updatePass2(this.user_current ,this.inputPass2.value));
       console.log("here");
     }
 
