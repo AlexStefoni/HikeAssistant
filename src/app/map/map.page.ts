@@ -114,7 +114,7 @@ export class MapPage {
  
 
   showMap(){
-    const location = new google.maps.LatLng(this.latS, this.lonS);
+    const location = new google.maps.LatLng(45.751527, 21.250862);
     const options = {
       center : location,
       zoom : 10,
