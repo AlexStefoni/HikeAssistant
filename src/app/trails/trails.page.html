@@ -7,14 +7,23 @@
     </ion-item>
     <br><br><br>
   <ion-list class="bg-transparent" >
-     <ion-item 
+   
+    
+    <ion-item 
       button 
       detail 
       lines="full" 
-      (click)="go()"
-      *ngFor="let item of items">
-      <ion-label>{{ item.name }}</ion-label>
+      
+      *ngFor="let tr of trails  "
+      (click)="go(tr)"
+      
+      >
+        <ion-label>{{ tr.Name }}</ion-label>
+      
+     
     </ion-item>
+
+    
   </ion-list> 
 
 </ion-content>

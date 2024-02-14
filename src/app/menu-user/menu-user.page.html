@@ -3,8 +3,37 @@
       <ion-icon size="large" name="log-out-outline" aria-hidden="true" ></ion-icon>
     </ion-item>
     <br><br><br>
-
     
+    <ion-item
+      button 
+      detail 
+      lines="full" 
+      *ngIf="isAccount"
+      (click)="goUser()"> ACCOUNT </ion-item>
+
+    <ion-item
+      button 
+      detail 
+      lines="full" 
+      *ngIf="isAdmin"
+      (click)="goUserList()"
+      > USER ACCOUNTS</ion-item>
+
+    <ion-item
+      button 
+      detail 
+      lines="full" 
+      *ngIf="isAccount"
+      (click)="goPersonalTrails()"
+      > PERSONAL TRAILS </ion-item>    
+
+      <ion-item
+      button 
+      detail 
+      lines="full" 
+      *ngIf="isAccount"
+      (click)="goAddtrails()"
+      > ADD TRAILS </ion-item> 
 
     <ion-item
       button 
@@ -16,6 +45,45 @@
       button 
       detail 
       lines="full" 
-      (click)="goMap()"> Map </ion-item>
+      (click)="goMap()"> MAP </ion-item>
+
+      <ion-item
+      button 
+      detail 
+      lines="full" 
+      (click)="goRecommendations()"> RECOMMENDATIONS </ion-item>
+
+      <ion-item
+      button 
+      detail 
+      lines="full" 
+      (click)="goEthics()"> MOUNTAIN ETHIC CODE </ion-item>
+
+      <ion-item
+      button 
+      detail 
+      lines="full" 
+      (click)="goFood()"> FOOD AND HYDRATION </ion-item>
+
+      <ion-item
+      button 
+      detail 
+      lines="full" 
+      (click)="goAnimals()"> MEETING ANIMALS</ion-item>
+
+      <ion-item
+      button 
+      detail 
+      lines="full" 
+      (click)="goContact()"> CONTACT CREATOR </ion-item>
+
+
+
+
+
+
+
+
+      
       
 </ion-content>

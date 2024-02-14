@@ -1,7 +1,44 @@
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="mainContainer">
 
-  <ion-button (click)="goBack()" size="large">
-     go back to trail list
-  </ion-button>
+  <ion-item button class="LoginB" (click)="goBack()" class="BackB">
+    <ion-icon size="large" name="log-out-outline" aria-hidden="true" ></ion-icon>
+  </ion-item>
+
+  <ion-item id="title" class="title">
+    {{name}}
+    <br>
+    made by : {{creator}}
+  </ion-item>
+
+
+  <div class="container">
+    <capacitor-google-map #map id="map" ></capacitor-google-map>
+    </div>
+
+
+    <ion-item id="decription" class="title">
+      {{desc}}
+      
+    </ion-item>
+
+
+    <ion-item
+    button
+    *ngIf="isAdmin" 
+    class="title"
+    (click)="goEdit()">
+
+      Modify Trail
+    </ion-item>  
+
+    <br><br><br><br><br><br>
+
+    <ion-item 
+    button
+    *ngIf="isAdmin" 
+    class="title"
+    (click)="deleteTr()">
+      Delete Trail
+    </ion-item>  
 </ion-content>

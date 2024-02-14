@@ -1,0 +1,26 @@
+<ion-content  class="background">
+  <ion-item button class="LoginB" (click)="goBack()" class="BackB">
+    <ion-icon size="large" name="log-out-outline" aria-hidden="true" ></ion-icon>
+  </ion-item>
+  <br><br><br>
+<ion-list class="bg-transparent" >
+ 
+  
+  <ion-item 
+    button 
+    detail 
+    lines="full" 
+    
+    *ngFor="let tr of trailsNew  "
+    (click)="go(tr)"
+    
+    >
+      <ion-label>{{ tr.Name }}</ion-label>
+    
+   
+  </ion-item>
+
+  
+</ion-list> 
+
+</ion-content>

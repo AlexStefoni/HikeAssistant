@@ -1,0 +1,40 @@
+
+
+
+<ion-content  class="background">
+  <ion-item button class="LoginB" (click)="goBack()" class="BackB">
+    <ion-icon size="large" name="log-out-outline" aria-hidden="true" ></ion-icon>
+  </ion-item>
+  <br><br><br>
+<ion-list class="bg-transparent" >
+ 
+  
+  <ion-item 
+    button 
+    detail 
+    lines="full" 
+
+    *ngFor="let us of users  "
+    >
+      <ion-label>
+        {{us.email}} 
+        | 
+        {{us.user_id}} 
+      </ion-label>
+    
+   
+  </ion-item>
+
+  
+</ion-list> 
+
+</ion-content>
+
+
+ <!-- 
+      
+   *ngFor="let tr of trails  "
+    (click)="go(tr)"
+
+  {{ tr.Name }}
+ -->

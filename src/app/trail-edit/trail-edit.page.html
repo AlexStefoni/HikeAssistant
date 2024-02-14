@@ -1,0 +1,94 @@
+<ion-content [fullscreen]="true" class="mainContainer">
+
+  <ion-list class="bg-transparent">
+
+    <ion-item button class="LoginB" (click)="goBack()" class="BackB">
+      <ion-icon size="large" name="arrow-back-outline" aria-hidden="true" ></ion-icon>
+    </ion-item>
+    <br><br><br>
+
+
+    <ion-item class="ErrorMsg" #ErrorMsg>
+      <ion-label color="danger"  >
+        
+      </ion-label>
+    </ion-item>
+
+
+    <ion-item class="field">
+      <ion-input 
+        value={{nameN}}
+        label-placement="floating" 
+        label="name" 
+        
+        
+        #name
+        ></ion-input>
+    </ion-item>
+
+    <ion-item class="field">
+      <ion-input 
+      
+        label-placement="floating" 
+        label="Start Latitude" 
+        value={{newSLat}}
+
+        #ST
+        ></ion-input>
+    </ion-item>
+
+    <ion-item class="field">
+      <ion-input 
+      
+        label-placement="floating" 
+        label="Start Longitude" 
+        value={{newSLon}}
+
+        #SL
+        ></ion-input>
+    </ion-item>
+
+    <ion-item class="field">
+      <ion-input 
+      
+        label-placement="floating" 
+        label="End Latitude" 
+        value={{newELat}}
+
+        #ET
+        ></ion-input>
+    </ion-item>
+
+    <ion-item class="field">
+      <ion-input 
+      
+        label-placement="floating" 
+        label="End Longitude" 
+        value={{newElon}}
+
+        #EL
+        ></ion-input>
+    </ion-item>
+
+    <ion-item class="field1">
+      <ion-textarea
+      
+        label-placement="floating" 
+        label="description" 
+        value={{desc}}
+        class="size"
+        #des
+        ></ion-textarea>
+       
+    </ion-item>
+
+
+    <ion-item 
+      button 
+      (click)="saveChanges()" 
+      class="saveB"
+      >
+       Save 
+    </ion-item>
+  </ion-list>
+</ion-content>

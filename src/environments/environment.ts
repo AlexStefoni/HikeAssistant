@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  mapsKey: 'AIzaSyAt80HymmlTVShtAmpUW3S1-gP1I-6tngM',
+  mapsKey: 'AIzaSyAMfXfn7zpkknIbBIHgPiskG4iHM_a1W74',
   firebase:{
     apiKey: "AIzaSyAaevZr0fUKXHnMqo0g7Ndjfhno3SoJUgY",
     authDomain: "hikeassistant-80a49.firebaseapp.com",

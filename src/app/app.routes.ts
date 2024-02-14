@@ -40,7 +40,67 @@ export const routes: Routes = [
   {
     path: 'title-page',
     loadComponent: () => import('./title-page/title-page.page').then( m => m.TitlePagePage)
+  },  {
+    path: 'user',
+    loadComponent: () => import('./user/user.page').then( m => m.UserPage)
+  },
+  {
+    path: 'add-trail',
+    loadComponent: () => import('./add-trail/add-trail.page').then( m => m.AddTrailPage)
+  },
+  {
+    path: 'local-tips',
+    loadComponent: () => import('./local-tips/local-tips.page').then( m => m.LocalTipsPage)
+  },
+  {
+    path: 'recommendations',
+    loadComponent: () => import('./recommendations/recommendations.page').then( m => m.RecommendationsPage)
+  },
+  {
+    path: 'add-trails',
+    loadComponent: () => import('./add-trails/add-trails.page').then( m => m.AddTrailsPage)
+  },
+  {
+    path: 'account-list',
+    loadComponent: () => import('./account-list/account-list.page').then( m => m.AccountListPage)
+  },
+  {
+    path: 'personal-trails',
+    loadComponent: () => import('./personal-trails/personal-trails.page').then( m => m.PersonalTrailsPage)
+  },
+  {
+    path: 'ethicspage',
+    loadComponent: () => import('./ethicspage/ethicspage.page').then( m => m.EthicspagePage)
+  },
+  {
+    path: 'food-page',
+    loadComponent: () => import('./food-page/food-page.page').then( m => m.FoodPagePage)
+  },
+  {
+    path: 'animals',
+    loadComponent: () => import('./animals/animals.page').then( m => m.AnimalsPage)
+  },
+  {
+    path: 'contact-page',
+    loadComponent: () => import('./contact-page/contact-page.page').then( m => m.ContactPagePage)
+  },
+  {
+    path: 'user-details',
+    loadComponent: () => import('./user-details/user-details.page').then( m => m.UserDetailsPage)
+  },
+  {
+    path: 'user-details',
+    loadComponent: () => import('./user-details/user-details.page').then( m => m.UserDetailsPage)
+  },
+  {
+    path: 'user-details',
+    loadComponent: () => import('./user-details/user-details.page').then( m => m.UserDetailsPage)
+  },
+  {
+    path: 'trail-edit',
+    loadComponent: () => import('./trail-edit/trail-edit.page').then( m => m.TrailEditPage)
   }
+
 
 
 
